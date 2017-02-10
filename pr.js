@@ -14,15 +14,17 @@ function buildPaymentRequest() {
     {
       supportedMethods: ['https://android.com/pay'],
       data: {
-        merchantName: 'Rouslan Solomakhin',
-        merchantId: '00184145120947117657',
+        merchantName: 'Vantiv Integrated Payments',
+        merchantId: '16662851041412722819',
         allowedCardNetworks: ['AMEX', 'MASTERCARD', 'VISA', 'DISCOVER'],
         paymentMethodTokenizationParameters: {
           tokenizationType: 'GATEWAY_TOKEN',
           parameters: {
-            'gateway': 'stripe',
-            'stripe:publishableKey': 'pk_live_lNk21zqKM2BENZENh3rzCUgo',
-            'stripe:version': '2016-07-06'
+            'gateway': 'vantiv',
+            'vantiv:merchantPayPageId': 'KjJkn9DXJjdesuBf',
+            'vantiv:merchantOrderId': 'orderId',
+            'vantiv:merchantTransactionId': 'tranId',
+            'vantiv:merchantReportGroup': 'reportGroup'
           }
         }
       }
