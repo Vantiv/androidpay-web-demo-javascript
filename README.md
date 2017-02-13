@@ -11,7 +11,7 @@ Site adapted from [https://rsolomakhin.github.io](https://rsolomakhin.github.io)
   * An Android Pay compatible credit card (card will not be charged)
   * Chrome for Android
 
-Setup:
+## Setup
 First [Enable Android Pay](https://androidpay.developers.google.com/signup) using a gmail or google account.
 
 Next [Signup for Android Pay Web Beta](https://docs.google.com/forms/d/e/1FAIpQLSeRreF7gYqSALxe0jHue9OM9rb07SarvvV3GjylmZgt_aXjpA/viewform)
