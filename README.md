@@ -2,7 +2,7 @@
 
 Site adapted from [https://rsolomakhin.github.io](https://rsolomakhin.github.io)
 
-## Requirements:
+## Requirements
 * A [Vantiv eProtect account](https://www.vantiv.com/get-started)
 * A Gmail or Google account
 * A [Heroku](https://www.heroku.com) account (no credit card needed)
