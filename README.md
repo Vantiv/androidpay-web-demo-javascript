@@ -101,6 +101,8 @@ followed by a JSON response:
 }
 ```
 
+The `paymentMethodToken` is the RegistrationId you will use in your Vantiv IP transaction to Web Services or PaymentsAPI.
+
 ## Android Pay Web Resources
 
 * [Web Payments at W3C](https://www.w3.org/Payments/)
