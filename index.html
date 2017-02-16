@@ -18,28 +18,59 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-        </ul>
-      </nav>
-      <h3 class="text-muted">Vantiv IP Android Pay Test</h3>
+  <div class="header clearfix">
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Vantiv IP - Just another demo</a>
+        <div class="navbar-right">
+          <div class="container minicart"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container-fluid breadcrumbBox text-center">
+    <ol class="breadcrumb">
+      <li><a href="#">Review</a></li>
+      <li class="active"><a href="#">Order</a></li>
+      <li><a href="#">Payment</a></li>
+    </ol>
+  </div>
+  <div class="container text-center">
+    <div class="col-md-5 col-sm-12">
+      <!--<div class="bigcart"></div>-->
+      <h1>Android Pay Demo</h1>
+      <p>
+        This page can be used to test Android Pay. No payment will be processed.
+      </p>
     </div>
-    <div class="jumbotron">
-      <h1></h1>
-      <p class="lead">This page can be used to test Android Pay. No payment will be processed.</p>
-      <p>Price: USD <strong>$55.00</strong></p>
-      <p><a class="btn btn-lg btn-success" href="#" role="button" onclick="onBuyClicked()">Buy</a></p>
+    <div class="col-md-7 col-sm-12 text-left">
+      <ul>
+        <li class="row list-inline columnCaptions">
+          <span>QTY</span>
+          <span>ITEM</span>
+          <span>Price</span>
+        </li>
+        <li class="row">
+          <span class="quantity">1</span>
+          <span class="itemName">Rusty Spoon</span>
+          <span class="popbtn"><a class="arrow"></a></span>
+          <span class="price">$55.00</span>
+        </li>
+        <li class="row totals">
+          <span class="itemName">Total:</span>
+          <span class="price">$55.00</span>
+          <span class="order" role="button" onclick="onBuyClicked()"> <a class="text-center">BUY</a></span>
+        </li>
+      </ul>
     </div>
+  </div>
   </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <div class="container">
-  <div id="msg"></div>
+    <div id="msg"></div>
   </div>
   <script src="util.js"></script>
   <script src="pr.js"></script>
