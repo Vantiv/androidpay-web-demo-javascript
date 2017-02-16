@@ -47,6 +47,10 @@ a:hover {
 	color: #fff;
 }
 
+.navbar-brand>img {
+  width: 25%;
+}
+
 /*-----------------------------------
 	Breadcrumb 
 -----------------------------------*/
@@ -251,6 +255,8 @@ a:hover {
     animation-duration: 0.5s;
     animation-name: popup;
     color: red;
+    font-size: 24px;
+    border: none;
 }
 
 @keyframes popup {
@@ -268,6 +274,7 @@ a:hover {
     animation-duration: 0.5s;
     animation-name: popdown;
     color: red;
+    border: none;
 }
 
 @keyframes popdown {
