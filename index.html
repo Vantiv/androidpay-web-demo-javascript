@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Vantiv IP Android Pay Test</title>
   <!-- Bootstrap -->
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -18,17 +18,29 @@
 </head>
 
 <body>
-  <div id="contents">
-    <h1>Vantiv IP Android Pay Test</h1>
-    <p>This page can be used to test Android Pay. No payment will be processed.</p>
-    <p>Price: USD <strong>$55.00</strong></p>
-    <p><button onclick="onBuyClicked()">Buy</button></p>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Vantiv IP Android Pay Test</h3>
+    </div>
+    <div class="jumbotron">
+      <h1></h1>
+      <p class="lead">This page can be used to test Android Pay. No payment will be processed.</p>
+      <p>Price: USD <strong>$55.00</strong></p>
+      <p><a class="btn btn-lg btn-success" href="#" role="button" onclick="onBuyClicked()">Buy</a></p>
+    </div>
   </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <pre id="msg"></pre>
+  <div class="container">
+  <div id="msg"></div>
+  </div>
   <script src="util.js"></script>
   <script src="pr.js"></script>
 </body>
