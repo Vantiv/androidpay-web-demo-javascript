@@ -14,14 +14,14 @@ function buildPaymentRequest() {
     {
       supportedMethods: ['https://android.com/pay'],
       data: {
-        merchantName: '<ENTER_MERCHANT_NAME>',
-        merchantId: '<ENTER_MERCHANTID>',
+        merchantName: 'Vantiv IP Android Pay Web',
+        merchantId: '16662851041412722819',
         allowedCardNetworks: ['AMEX', 'MASTERCARD', 'VISA', 'DISCOVER'],
         paymentMethodTokenizationParameters: {
           tokenizationType: 'GATEWAY_TOKEN',
           parameters: {
             'gateway': 'vantiv',
-            'vantiv:merchantPayPageId': '<ENTER_EPROTECT_PAYPAGEID>',
+            'vantiv:merchantPayPageId': 'KjJkn9DXJjdesuBf',
             'vantiv:merchantOrderId': 'orderId',
             'vantiv:merchantTransactionId': 'tranId',
             'vantiv:merchantReportGroup': 'reportGroup'
