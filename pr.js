@@ -21,7 +21,7 @@ function buildPaymentRequest() {
           tokenizationType: 'GATEWAY_TOKEN',
           parameters: {
             'gateway': 'vantiv',
-            'vantiv:merchantPayPageId': 'KjJkn9DXJjdesuBf',
+            'vantiv:merchantPayPageId': 'bRPpBspVdgogiyLi',
             'vantiv:merchantOrderId': 'orderId',
             'vantiv:merchantTransactionId': 'tranId',
             'vantiv:merchantReportGroup': 'reportGroup'
