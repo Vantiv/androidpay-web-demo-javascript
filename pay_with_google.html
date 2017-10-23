@@ -93,7 +93,17 @@
     }];
   
     var details = {
-      total: {label: 'Test Purchase', amount: {currency: 'USD', value: '1.00'}}
+      total: {label: 'Test Purchase', amount: {currency: 'USD', value: '1.00'}},
+      displayItems: [
+      {
+        label: 'Original donation amount',
+        amount: {currency: 'USD', value: '65.00'}
+      },
+      {
+        label: 'Friends and family discount',
+        amount: {currency: 'USD', value: '-10.00'}
+      }
+     ] 
     };
   
     return new PaymentRequest(methodData, details);
