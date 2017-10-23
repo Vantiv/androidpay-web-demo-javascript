@@ -87,10 +87,10 @@
    */
   function createPaymentRequest() {
     // Support Google Payment API.
-    var methodData = {
+    var methodData = [{
       'supportedMethods': 'https://google.com/pay',
       'data': getGooglePaymentsConfiguration()
-    };
+    }];
   
     var details = {
       total: {label: 'Test Purchase', amount: {currency: 'USD', value: '1.00'}}
