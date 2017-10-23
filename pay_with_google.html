@@ -88,31 +88,10 @@
   function createPaymentRequest() {
     // Support Google Payment API.
     var methodData = [{
-      'supportedMethods': 'https://google.com/pay',
+      'supportedMethods': ['https://google.com/pay'],
       'data': getGooglePaymentsConfiguration()
     }];
   
-    var supportedInstruments = [
-    {
-      supportedMethods: ['https://android.com/pay'],
-      data: {
-        merchantName: 'Vantiv IP Android Pay Web',
-        merchantId: '16662851041412722819',
-        allowedCardNetworks: ['AMEX', 'MASTERCARD', 'VISA', 'DISCOVER'],
-        paymentMethodTokenizationParameters: {
-          tokenizationType: 'GATEWAY_TOKEN',
-          parameters: {
-            'gateway': 'vantiv',
-            'vantiv:merchantPayPageId': 'bRPpBspVdgogiyLi',
-            'vantiv:merchantOrderId': 'orderId',
-            'vantiv:merchantTransactionId': 'tranId',
-            'vantiv:merchantReportGroup': 'reportGroup'
-          }
-        }
-      }
-    }
-  ];
-
     var details = {
         total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
         displayItems: [
@@ -127,7 +106,7 @@
         ]
       };
   
-    return new PaymentRequest(supportedInstruments, details);
+    return new PaymentRequest(methodData, details);
   }
   
   /**
