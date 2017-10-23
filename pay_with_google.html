@@ -1,0 +1,129 @@
+<div id="checkout">
+    <button>Checkout</button>
+  </div>
+  
+  <script>
+  if (window.PaymentRequest) {
+    var request = createPaymentRequest();
+  
+    request.canMakePayment()
+        .then(function(result) {
+          if (result) {
+            addPayWithGoogleButton();
+          }
+        })
+        .catch(function(err) {
+          showErrorForDebugging(
+              'canMakePayment() error! ' + err.name + ' error: ' + err.message);
+        });
+  } else {
+    showErrorForDebugging('PaymentRequest API not available.');
+  }
+  
+  /**
+   * Add a Pay with Google button alongside the existing checkout option
+   */
+  function addPayWithGoogleButton() {
+    var payWithGoogleButton = document.createElement('button');
+    payWithGoogleButton.appendChild(document.createTextNode('Pay with Google'));
+    payWithGoogleButton.addEventListener('click', onPayWithGoogleClicked);
+    document.getElementById('checkout').appendChild(payWithGoogleButton);
+  }
+  
+  /**
+   * Show Pay with Google chooser when buy button clicked
+   */
+  function onPayWithGoogleClicked() {
+    createPaymentRequest()
+        .show()
+        .then(function(response) {
+          // Dismiss payment dialog
+          response.complete('success');
+          handlePaymentResponse(response);
+        })
+        .catch(function(err) {
+          showErrorForDebugging('show() error! ' + err.name + ' error: ' + err.message);
+        });
+  }
+  
+  /**
+   * Configure support for the Google Payments API
+   *
+   * @returns {object} data attribute suitable for PaymentMethodData
+   */
+  function getGooglePaymentsConfiguration() {
+    return {
+      // Merchant ID available after approval by Google.
+      'merchantId':'16662851041412722819',
+      'environment': 'TEST',
+      'apiVersion': 1,
+      'allowedPaymentMethods': ['CARD', 'TOKENIZED_CARD'],
+      'paymentMethodTokenizationParameters': {
+        'tokenizationType': 'PAYMENT_GATEWAY',
+        // Check with your payment gateway on the parameters to pass.
+        'parameters': {
+            'gateway': 'vantiv',
+            'vantiv:merchantPayPageId': 'bRPpBspVdgogiyLi',
+            'vantiv:merchantOrderId': 'orderId',
+            'vantiv:merchantTransactionId': 'tranId',
+            'vantiv:merchantReportGroup': 'reportGroup'
+          }
+      },
+      'cardRequirements': {
+        'allowedCardNetworks': ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA'],
+        'billingAddressRequired': true,
+        'billingAddressFormat': 'MIN'
+      },
+      'phoneNumberRequired': true,
+      'emailRequired': true,
+      'shippingAddressRequired': true
+    };
+  }
+  
+  /**
+   * Create a PaymentRequest
+   *
+   * @returns {PaymentRequest}
+   */
+  function createPaymentRequest() {
+    // Support Google Payment API.
+    var methodData = [{
+      'supportedMethods': 'https://google.com/pay',
+      'data': getGooglePaymentsConfiguration()
+    }];
+  
+    var details = {
+      total: {label: 'Test Purchase', amount: {currency: 'USD', value: '1.00'}}
+    };
+  
+    return new PaymentRequest(methodData, details);
+  }
+  
+  /**
+   * Process a PaymentResponse
+   *
+   * @param {PaymentResponse} response returned when user approves the Pay with Google request
+   */
+  function handlePaymentResponse(response) {
+    var formattedResponse = document.createElement('pre');
+    formattedResponse.appendChild(
+        document.createTextNode(JSON.stringify(response.toJSON(), null, 2)));
+    document.getElementById('checkout')
+        .insertAdjacentElement('afterend', formattedResponse);
+  }
+  
+  /**
+   * Display an error message
+   *
+   * @param {string} text message to display
+   */
+  function showErrorForDebugging(text) {
+    var errorDisplay = document.createElement('code');
+    errorDisplay.style.color = 'red';
+    errorDisplay.appendChild(document.createTextNode(text));
+    var p = document.createElement('p');
+    p.appendChild(errorDisplay);
+    document.getElementById('checkout').insertAdjacentElement('afterend', p);
+  }
+  
+  </script>
