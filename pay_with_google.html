@@ -54,7 +54,7 @@
   function getGooglePaymentsConfiguration() {
     return {
       // Merchant ID available after approval by Google.
-      //'merchantId':'16662851041412722819',
+      //'merchantId':'<ENTER_MERCHANTID>', //only needed in prod env
       'environment': 'TEST',
       'apiVersion': 1,
       'allowedPaymentMethods': ['CARD', 'TOKENIZED_CARD'],
@@ -63,7 +63,7 @@
         // Check with your payment gateway on the parameters to pass.
         'parameters': {
             'gateway': 'vantiv',
-            'vantiv:merchantPayPageId': 'KjJkn9DXJjdesuBf',
+            'vantiv:merchantPayPageId': '<ENTER_EPROTECT_PAYPAGEID>',
             'vantiv:merchantOrderId': 'orderId',
             'vantiv:merchantTransactionId': 'tranId',
             'vantiv:merchantReportGroup': 'reportGroup'
